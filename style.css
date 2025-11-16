@@ -1,0 +1,19 @@
+
+main {
+  background-color: rgb(245, 241, 231);
+  padding: 5%;
+  height: 100%;
+}
+
+section {
+  background-color: rgb(198, 222, 222);
+  margin: 5%;
+}
+
+a {
+  color: black;
+}
+
+.content {
+  flex: 1;
+}
