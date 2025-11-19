@@ -2,52 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kleiderspende</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: rgb(98, 98, 98);">
+
   <header>
-    <nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
-      <ul class="container-fluid">
-        <li class="d-inline"><a class="navbar-brand"  href="">Home</a></li>
-        <li class="d-inline"><a class="navbar-brand" href="">Abholung</a></li>
-        <li class="d-inline"><a class="navbar-brand" href="">Abgabe vor Ort</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <img height="60px" width="60px" src="images/logo.png" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Navigation
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">Home</a></li>
+                <li><a class="dropdown-item" href="#">Spende vor Ort</a></li>
+                <li><a class="dropdown-item" href="#">Abholung Zuhause</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
-  <main class="content">
-    <section class="text-center p-4">
-      <h1><a href="">Willkommen bei Stoff für Hoffnung</a></h1>
-      <br>
-      <p>Schaffen Sie Platz in Ihrem Kleiderschrank und tun damit etwas Gutes</p>
-    </section>
-    <div class="row">
-      <section class="col">
-        <h2><a href="">Registrieren Sie Ihre Spende zur Abholung</a></h2>
-        <br>
-        <p>Sie haben keine Möglichkeit Ihre Spende zur Spenden-Station zu bringen?<br>
-          Kein Problem, Registrieren Sie Ihre Spende für unsere monatliche Sammelfahrt.</p>
-      </section>
-      <section class="col">
-        <h2><a href="">Vor-Ort-Spende Registrieren</a></h2>
-        <br>
-        <p>Wählen Sie diese Option, wenn Sie Ihre Spende vor Ort abgeben.</p>
-      </section>
+
+  <main style="padding: 2%;">
+    <h2 style="text-align: center; margin-bottom: 2%;">
+    <u style="color: white; font-size: 2.5rem;">Kleider</u>
+    <small class="text-body-secondary"><u style="color: rgb(255, 194, 81);">für Hoffnung</u></small>
+    </h2>
+
+    <div class="card mb-3 shadow-lg" style="max-width: 800px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="images/kenya-kind.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 1.5rem;">Kinder in Kenya</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <button type="button" class="btn btn-warning">Spenden</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="card mb-3 shadow-lg" style="max-width: 800px; float: right;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="images/obdachlose.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 1.5rem;">Obdachlose in Osteuropa</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <button type="button" class="btn btn-warning">Spenden</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3 shadow-lg" style="max-width: 800px; clear: both;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="images/flut02.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 1.5rem;">Flutopfer in Portugal</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <button type="button" class="btn btn-warning">Spenden</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
-  <footer>
-    <nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
-      <ul class="container-fluid">
-        <li class="d-inline"><a class="navbar-brand" href="">Impressum</a></li>
-        <li class="d-inline"><a class="navbar-brand" href="">Datenschutz</a></li>
-        <li class="d-inline"><a class="navbar-brand" href="">Wir suchen DICH!</a></li>
-      </ul>
-    </nav>
-  </footer>
+
+  <div class="bg-dark" style="color: white; padding: 0.5rem; padding-top: 1rem; text-align: center;">
+  <p>Mit dem angeben von Persönlichen daten, willigen Sie ein, dass diese zur verarbeitung an dritte weitergegeben werden dürfen</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
