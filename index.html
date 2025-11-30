@@ -93,23 +93,91 @@
       </div>
     </div>
 
-    <form>
 
-      <div id="repeatable-container">
-        <div class="input-group mb-3 repeatable-item">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
+
+    <form class="bg-warning-subtle p-md-5 rounded-5 m-5">
+
+      <div class="text-center text-decoration-underline">
+        <h2>Spenden Formular</h2>
+      </div>
+
+
+
+      <div class="container">
+
+        <div class="text-start text-decoration-underline">
+          <h4>Ihre Daten:</h4>
+        </div>
+
+
+         <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Tobi">
+                <label for="floatingInput">Name</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Schulze">
+                <label for="floatingInput">Nachname</label>
+              </div>
+            </div>
+          </div>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email Adresse</label>
+        </div>
+
+
+        <div class="text-start text-decoration-underline">
+          <h4>Ihre Spende:</h4>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Krisengebiet wählen</option>
+              <option value="1">Kinder in Kenya</option>
+              <option value="2">Obdachlose in Osteuropa</option>
+              <option value="3">Flutopfer in Portugal</option>
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="row" id="repeatable-container">
+
+          <div class="input-group mb-3 repeatable-item col-4">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Klamotten</option>
+              <option value="1">Oberteile</option>
+              <option value="2">Hosen</option>
+              <option value="3">Schuhe</option>
+            </select>
+            <input type="text" class="form-control bg-success-subtle" aria-label="Text input with dropdown button" placeholder="*quantity">
+          </div>
+
+        </div>
+
+        <div class="row justify-content-start">
+
+          <div class="col-1">
+            <button type="button" id="addItem" class="btn btn-primary">+</button>
+          </div>
+          <div class="col-1">
+            <button type="button" id="removeItem" class="btn btn-danger">−</button>
+          </div>
+
         </div>
       </div>
 
-      <button type="button" id="addItem" class="btn btn-primary mt-2">+ Add More</button>
 
-      <button type="submit" class="btn btn-warning">Submit</button>
+
+
     </form>
 
   </main>
@@ -125,14 +193,22 @@
     document.getElementById("addItem").addEventListener("click", function () {
       let container = document.getElementById("repeatable-container");
       console.log("hallo")
-      // clone first element
+
       let template = container.querySelector(".repeatable-item");
       let clone = template.cloneNode(true);
 
-      // clear inputs in clone
       clone.querySelectorAll("input").forEach(input => input.value = "");
 
       container.appendChild(clone);
+    });
+
+     document.getElementById("removeItem").addEventListener("click", function () {
+      const container = document.getElementById("repeatable-container");
+      const items = container.querySelectorAll(".repeatable-item");
+
+      if (items.length > 1) {
+        items[items.length - 1].remove();
+    }
     });
 
   </script>
