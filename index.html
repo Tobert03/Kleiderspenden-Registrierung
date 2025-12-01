@@ -101,8 +101,11 @@
       <div class="text-center text-decoration-underline">
         <h2>Spenden Formular</h2>
       </div>
-
-
+ 
+      <div class="form-check form-switch" >
+        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" >
+        <label class="form-check-label" for="switchCheckDefault" >Übergabe an der Geschäftsstelle</label>
+      </div>
 
       <div class="container">
 
@@ -131,6 +134,20 @@
           <label for="floatingInput">Email Adresse</label>
         </div>
 
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="Musterstraße 10" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Abholung am 15. des nächsten Monats, Uhrzeit per Mail.">
+              <label for="floatingInput">Adresse</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="64720">
+              <label for="floatingInput">Postleitzahl</label>
+            </div>
+          </div>
+        </div>
 
         <div class="text-start text-decoration-underline">
           <h4>Ihre Spende:</h4>
@@ -151,14 +168,14 @@
 
         <div class="row" id="repeatable-container">
 
-          <div class="input-group mb-3 repeatable-item col-4">
+          <div class="input-group repeatable-item col-4">
             <select class="form-select" aria-label="Default select example">
               <option selected>Klamotten</option>
               <option value="1">Oberteile</option>
               <option value="2">Hosen</option>
               <option value="3">Schuhe</option>
             </select>
-            <input type="text" class="form-control bg-success-subtle" aria-label="Text input with dropdown button" placeholder="*quantity">
+            <input type="text" class="form-control bg-success-subtle" aria-label="Text input with dropdown button" placeholder="*Anzahl">
           </div>
 
         </div>
@@ -210,6 +227,9 @@
         items[items.length - 1].remove();
     }
     });
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
   </script>
 </body>
