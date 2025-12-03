@@ -103,8 +103,8 @@
       </div>
  
       <div class="form-check form-switch" >
-        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" >
-        <label class="form-check-label" for="switchCheckDefault" >Übergabe an der Geschäftsstelle</label>
+        <input id="switch" class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" >
+        <label id="switch-label" class="form-check-label" for="switchCheckDefault" >Abholung Zuhause</label>
       </div>
 
       <div class="container">
@@ -168,14 +168,14 @@
 
         <div class="row" id="repeatable-container">
 
-          <div class="input-group repeatable-item col-4">
+          <div class="input-group repeatable-item">
             <select class="form-select" aria-label="Default select example">
               <option selected>Klamotten</option>
               <option value="1">Oberteile</option>
               <option value="2">Hosen</option>
               <option value="3">Schuhe</option>
             </select>
-            <input type="text" class="form-control bg-success-subtle" aria-label="Text input with dropdown button" placeholder="*Anzahl">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="*Anzahl">
           </div>
 
         </div>
@@ -231,6 +231,19 @@
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+
+    document.getElementById("switch").addEventListener("click", function () {
+      const label = document.getElementById("switch-label")
+      const text = label.textContent.trim()
+      const text1 = "Abholung Zuhause"
+      const text2 = "Abgabe vor Ort"
+
+      if (text == text1) {
+        label.textContent = text2;
+      } else {
+        label.textContent =text1;
+      }
+    });
   </script>
 </body>
 </html>
