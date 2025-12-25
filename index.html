@@ -23,9 +23,8 @@
                 Navigation
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Home</a></li>
-                <li><a class="dropdown-item" href="#">Spende vor Ort</a></li>
-                <li><a class="dropdown-item" href="#">Abholung Zuhause</a></li>
+                <li><button class="btn btn-secondary w-100" onclick="scrollToItem()">Abgabe vor Ort</button></li>
+                <li><button class="btn btn-secondary w-100" onclick="scrollToItem()">Abholung von Zuhause</button></li>
               </ul>
             </li>
           </ul>
@@ -96,7 +95,7 @@
 
 
 
-    <form class="bg-warning-subtle p-md-5 rounded-5 m-5">
+    <form id="form" class="bg-warning-subtle p-md-5 rounded-5 m-5">
 
       <div class="text-center text-decoration-underline">
         <h2>Spenden Formular</h2>
@@ -134,7 +133,7 @@
           <label for="floatingInput">Email Adresse</label>
         </div>
 
-        <div class="row">
+        <div class="row" id="addressplz">
           <div class="col">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="floatingInput" placeholder="Musterstraße 10" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Abholung am 15. des nächsten Monats, Uhrzeit per Mail.">
@@ -233,6 +232,7 @@
 
 
     document.getElementById("switch").addEventListener("click", function () {
+      const section = document.getElementById("addressplz")
       const label = document.getElementById("switch-label")
       const text = label.textContent.trim()
       const text1 = "Abholung Zuhause"
@@ -240,10 +240,19 @@
 
       if (text == text1) {
         label.textContent = text2;
+        section.querySelectorAll("input").forEach(el => el.disabled = true);
       } else {
         label.textContent =text1;
+        section.querySelectorAll("input").forEach(el => el.disabled = false);
       }
     });
+
+    function scrollToItem() {
+      document.getElementById("form").scrollIntoView({
+      behavior: "smooth", // smooth animation
+      block: "start"      // align to top
+    });
+    }
   </script>
 </body>
 </html>
