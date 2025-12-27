@@ -23,8 +23,8 @@
                 Navigation
               </button>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><button class="btn btn-secondary w-100" onclick="scrollToItem()">Abgabe vor Ort</button></li>
-                <li><button class="btn btn-secondary w-100" onclick="scrollToItem()">Abholung von Zuhause</button></li>
+                <li><button class="btn btn-secondary w-100" onclick="scrollToForm(); wayOfDonation(1);">Abgabe vor Ort</button></li>
+                <li><button class="btn btn-secondary w-100" onclick="scrollToForm(); wayOfDonation(2);">Abholung von Zuhause</button></li>
               </ul>
             </li>
           </ul>
@@ -56,7 +56,7 @@
             <h5 class="card-title" style="font-size: 1.5rem;">Kinder in Kenya</h5>
             <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illum inventore odio dolorum praesentium recusandae rem natus aut fugit
             </p>
-            <button type="button" class="btn btn-warning">Spenden</button>
+            <button onclick="selectArea(1); scrollToForm()" type="button" class="btn btn-warning">Spenden</button>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
           <div class="card-body">
             <h5 class="card-title" style="font-size: 1.5rem;">Obdachlose in Osteuropa</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <button type="button" class="btn btn-warning">Spenden</button>
+            <button onclick="selectArea(2); scrollToForm()" type="button" class="btn btn-warning">Spenden</button>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
           <div class="card-body">
             <h5 class="card-title" style="font-size: 1.5rem;">Flutopfer in Portugal</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <button type="button" class="btn btn-warning">Spenden</button>
+            <button onclick="selectArea(3); scrollToForm();" type="button" class="btn btn-warning">Spenden</button>
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@
 
         <div class="row">
           <div class="col">
-            <select class="form-select" aria-label="Default select example">
+            <select id="areaSelector" class="form-select" aria-label="Default select example">
               <option selected>Krisengebiet wählen</option>
               <option value="1">Kinder in Kenya</option>
               <option value="2">Obdachlose in Osteuropa</option>
@@ -240,6 +240,7 @@
 
       if (text == text1) {
         label.textContent = text2;
+        section.querySelectorAll("input").forEach(el => el.value = "");
         section.querySelectorAll("input").forEach(el => el.disabled = true);
       } else {
         label.textContent =text1;
@@ -247,11 +248,32 @@
       }
     });
 
-    function scrollToItem() {
+    function wayOfDonation(way) {
+      const section = document.getElementById("addressplz")
+      const label = document.getElementById("switch-label")
+      const text = label.textContent.trim()
+      const text1 = "Abholung Zuhause"
+      const text2 = "Abgabe vor Ort"
+
+      if (way == 1) {
+        label.textContent = text2;
+        section.querySelectorAll("input").forEach(el => el.value = "");
+        section.querySelectorAll("input").forEach(el => el.disabled = true);
+      } else {
+        label.textContent =text1;
+        section.querySelectorAll("input").forEach(el => el.disabled = false);
+      }
+    }
+
+    function scrollToForm() {
       document.getElementById("form").scrollIntoView({
-      behavior: "smooth", // smooth animation
-      block: "start"      // align to top
+      behavior: "smooth",
+      block: "start"
     });
+    }
+
+    function selectArea(choice) {
+      document.getElementById("areaSelector").selectedIndex = choice;
     }
   </script>
 </body>
