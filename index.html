@@ -116,34 +116,34 @@
          <div class="row">
             <div class="col">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Tobi">
-                <label for="floatingInput">Name</label>
+                <input type="text" class="form-control" id="firstname" placeholder="Tobi">
+                <label for="firstname">Name</label>
               </div>
             </div>
             <div class="col">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Schulze">
-                <label for="floatingInput">Nachname</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Schulze">
+                <label for="lastname">Nachname</label>
               </div>
             </div>
           </div>
 
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email Adresse</label>
+          <input type="email" class="form-control" id="mail" placeholder="name@example.com">
+          <label for="mail">Email Adresse</label>
         </div>
 
         <div class="row" id="addressplz">
           <div class="col">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" placeholder="Musterstraße 10" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Abholung am 15. des nächsten Monats, Uhrzeit per Mail.">
-              <label for="floatingInput">Adresse</label>
+              <input type="text" class="form-control" id="adresse" placeholder="Musterstraße 10" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Abholung am 15. des nächsten Monats, Uhrzeit per Mail.">
+              <label for="adresse">Adresse</label>
             </div>
           </div>
           <div class="col">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" placeholder="64720">
-              <label for="floatingInput">Postleitzahl</label>
+              <input type="text" class="form-control" id="plz" placeholder="64720">
+              <label for="plz">Postleitzahl</label>
             </div>
           </div>
         </div>
@@ -189,6 +189,8 @@
           </div>
 
         </div>
+        <br>
+        <button onclick="submitForm()" type="button" class="btn btn-secondary btn-lg">Spende bestätigen</button>
       </div>
 
 
@@ -274,6 +276,20 @@
 
     function selectArea(choice) {
       document.getElementById("areaSelector").selectedIndex = choice;
+    }
+
+    function submitForm() {
+      const firstname = document.getElementById("firstname").value.trim();
+      const lastname = document.getElementById("lastname").value.trim();
+      const mail = document.getElementById("mail").value.trim();
+      const adresse = document.getElementById("adresse").value.trim();
+      const plz = document.getElementById("plz").value.trim();
+      //angegebene Klamotten speichern...
+      
+      console.log(firstname, lastname, mail, adresse, plz);
+    }
+    function hallo() {
+      console.log("hallo")
     }
   </script>
 </body>
